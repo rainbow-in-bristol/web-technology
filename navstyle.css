@@ -1,0 +1,44 @@
+html, body{
+    background:#f2f2f2;
+}
+#header {
+    background-color:#6ac13c;
+    height: 85px;
+    color:white;
+    text-align:center;
+    padding:5px;
+}
+#nav {
+    line-height:30px;
+    background-color:#eeeeee;
+    height:800px;
+    width:100px;
+    float:left;
+    padding:5px;
+    text-align: center;
+}
+#nav a {
+    /*设置字体颜色*/
+    color: darkslateblue;
+    /*设置字体*/
+    font:bold 14px Georgia;
+    /*去除下划线*/
+    text-decoration: none;
+}
+
+#nav a:hover{
+    color: #a1a1a1;
+    text-decoration: underline;
+}
+#section {
+    width:1200px;
+    float:left;
+    padding:0px;
+}
+#footer {
+    background-color:#6ac13c;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:5px;
+}

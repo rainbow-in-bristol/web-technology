@@ -1,155 +1,30 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <style>
-        html, body{
-            background:#f2f2f2;
-        }
-        #header {
-            background-color:#6ac13c;
-            height: 85px;
-            color:white;
-            text-align:center;
-            padding:5px;
-        }
-        #nav {
-            line-height:30px;
-            background-color:#eeeeee;
-            height:550px;
-            width:100px;
-            float:left;
-            padding:5px;
-            text-align: center;
-        }
-        #nav a {
-            /*设置字体颜色*/
-            color: darkslateblue;
-            /*设置字体*/
-            font:bold 14px Georgia;
-            /*去除下划线*/
-            text-decoration: none;
-        }
+    <title>JavaScript Event Calendar</title>
+    <link rel="stylesheet" type="text/css" href="navstyle.css" />
+    <!-- head -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        #nav a:hover{
-            color: #a1a1a1;
-            text-decoration: underline;
-        }
-        #section {
-            width:350px;
-            float:left;
-            padding:10px;
-        }
-        #footer {
-            background-color:#6ac13c;
-            color:white;
-            clear:both;
-            text-align:center;
-            padding:5px;
-        }
-        .calendar{
-            margin: 45px;
-            width: 490px;
-            height: 350px;
-            background: white;
-            box-shadow: 0px 1px 1px rgba(0,0,0,.1);
-        }
+    <!-- demo stylesheet -->
+    <link type="text/css" rel="stylesheet" href="helpers/demo.css?v=2020.2.4325" />
+    <link type="text/css" rel="stylesheet" href="helpers/media/layout.css?v=2020.2.4325" />
+    <link type="text/css" rel="stylesheet" href="helpers/media/elements.css?v=2020.2.4325" />
 
-        .title{
-            height: 70px;
-            border-bottom: 1px solid rgba(0,0,0,.1);
-            position: relative;
-            text-align: center;
-        }
+    <!-- helper libraries -->
+    <script src="helpers/jquery-1.12.2.min.js" type="text/javascript"></script>
 
-        #calendar-title{
-            font-size: 25px;
-            text-transform: uppercase;
-            font-family: Arial, Helvetica, sans-serif;
-            line-height:15px;
-            padding: 18px 0 0 0;
-        }
-
-        #calendar-year{
-            font-size: 15px;
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight: normal;
-        }
-
-        #pre{
-            position: absolute;
-            top: 0px;
-            left: 0px;
-            background: url(prev.png) no-repeat 50% 50%;
-
-            /*没规定大小时，图片显示 0X0*/
-            width: 60px;
-            height: 70px;
-
-        }
-
-        #next{
-            position: absolute;
-            top: 0px;
-            right: 0px;
-            background: url(next.png) no-repeat 50% 50%;
-            width: 60px;
-            height: 70px;
-        }
-
-        .body-list ul{
-            font-size: 14px;
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight: bold;
-            width: 90%;
-            box-sizing: border-box;
-            align-content: center;
-        }
-
-        .body-list ul li{
-            list-style: none;
-            /*
-            display:inline-block;
-            width: 13.3%;
-            */
-
-            /*100/7 = 14.28%*/
-            display: block;
-            width: 14.28%;
-            float: left;
-
-            /*规定行高，垂直居中*/
-            height: 36px;
-            line-height: 36px;
-            box-sizing: border-box;
-            text-align: center;
-
-        }
+    <!-- daypilot libraries -->
+    <script src="js/daypilot-all.min.js?v=2020.2.4325" type="text/javascript"></script>
 
 
-        .green{
-            color:#6ac13c;
-        }
-
-        .lightgrey{ /*浅灰色显示过去的日期*/
-            color:#a8a8a8;
-        }
-        .darkgrey{ /*深灰色显示将来的日期*/
-            color:#565656;
-        }
-
-        /*日期当天用绿色背景绿色文字加以显示*/
-        .greenbox{
-            border: 1px solid #6ac13c;
-            background: #e9f8df;
-        }
 
 
-    </style>
+    <!-- /head -->
+
 </head>
-
 <body>
-
 <div id="header">
     <h1>Student homepage</h1>
 </div>
@@ -163,133 +38,192 @@
     <a href="#">Sign Out</a><br><br>
 
 </div>
-
 <div id="section">
-    <div class="calendar">
-        <div class="title">
-            <h1 class="green" id="calendar-title">Month</h1>
-            <h2 class="green" id="calendar-year">Year</h2>
-            <a href="" id="pre"></a>
-            <a href="" id="next"></a>
+    <!-- top -->
+    <div id="main">
+        <div id="tabs">
+            <!-- tabs -->
+            <div class="tabs-items">
+
+                <a class='tab selected' href='calendar/index.html'><span>Calendar</span></a>
+                <a class='tab' href='month/index.html'><span>Month</span></a>
+            </div>
+            <div class="header"><div class="bg-help">Outlook-Like Day/Week Calendar Component</div></div>
+
+            <!-- /tabs -->
         </div>
 
-        <div class="body">
-            <div class="lightgrey body-list">
-                <ul>
-                    <li>SUN</li>
-                    <li>MON</li>
-                    <li>TUE</li>
-                    <li>WED</li>
-                    <li>THU</li>
-                    <li>FRI</li>
-                    <li>SAT</li>
+        <div id="container" >
+            <div id="left" class="menu">
 
-                </ul>
 
+                <!-- /menu -->
             </div>
+        </div>
+        <div id="content">
+            <div>
 
-            <div class="darkgrey body-list">
-                <ul id="days">
+                <!-- /top -->
 
-                </ul>
+                <div class="note">
+
+                    <div id="dp"></div>
+
+                    <div id="touch"></div>
+
+                    <script type="text/javascript">
+
+                        var dp = new DayPilot.Calendar("dp");
+
+                        // view
+                        dp.startDate = DayPilot.Date.today();
+                        dp.viewType = "Week";
+                        dp.allDayEventHeight = 25;
+
+                        dp.eventDeleteHandling = "Update";
+                        dp.onEventDelete = function(args) {
+                            alert("deleting: " + args.e.text());
+                        };
+
+                        // bubble, with async loading
+                        dp.bubble = new DayPilot.Bubble({
+                            onLoad: function(args) {
+                                var ev = args.source;
+                                //alert("event: " + ev);
+                                args.async = true;  // notify manually using .loaded()
+
+                                // simulating slow server-side load
+                                setTimeout(function() {
+                                    args.html = "testing bubble for: <br>" + ev.text();
+                                    args.loaded();
+                                }, 500);
+                            }
+                        });
+
+                        dp.contextMenu = new DayPilot.Menu({
+                            items: [
+                                {text:"Show event ID", onclick: function() {alert("Event value: " + this.source.value());} },
+                                {text:"Show event text", onclick: function() {alert("Event text: " + this.source.text());} },
+                                {text:"Show event start", onclick: function() {alert("Event start: " + this.source.start().toStringSortable());} },
+                                {text:"Delete", onclick: function() { dp.events.remove(this.source); } }
+                            ]});
+
+                        // event moving
+                        dp.onEventMoved = function (args) {
+                            dp.message("Moved: " + args.e.text());
+                        };
+
+                        // event resizing
+                        dp.onEventResized = function (args) {
+                            dp.message("Resized: " + args.e.text());
+                        };
+
+                        // event creating
+                        dp.onTimeRangeSelected = function (args) {
+                            var name = prompt("New event name:", "Event");
+                            dp.clearSelection();
+                            if (!name) return;
+                            var e = new DayPilot.Event({
+                                start: args.start,
+                                end: args.end,
+                                id: DayPilot.guid(),
+                                resource: args.resource,
+                                text: name
+                            });
+                            dp.events.add(e);
+                            dp.message("Created");
+                        };
+
+                        dp.onTimeRangeRightClick = function(args) {
+                            window.console && console.log(args);
+                        };
+
+                        dp.onTimeRangeDoubleClicked = function(args) {
+                            alert("DoubleClick: start: " + args.start + " end: " + args.end + " resource: " + args.resource);
+                        };
+
+                        dp.onEventClick = function(args) {
+                            //alert("clicked: " + args.e.id());
+                        };
+
+                        dp.eventDoubleClickHandling = "Enabled";
+                        dp.onEventDoubleClick = function(args) {
+                            alert("double click");
+                        };
+
+                        dp.showEventStartEnd = true;
+                        dp.scrollLabelsVisible = true;
+
+                        var e = new DayPilot.Event({
+                            start: DayPilot.Date.today().addHours(12),
+                            end: DayPilot.Date.today().addHours(15),
+                            id: DayPilot.guid(),
+                            text: "Special event"
+                        });
+                        dp.events.add(e);
+
+                        dp.contextMenuSelection = new DayPilot.Menu({
+                            items: [
+                                {
+                                    'text': 'Create new event (JavaScript)', 'onclick': function () {
+                                        dp.events.add(new DayPilot.Event({
+                                            start: this.source.start,
+                                            end: this.source.end,
+                                            text: "New event",
+                                            resource: this.source.resource
+                                        }));
+                                    }
+                                },
+                                {'text': '-'},
+                                {
+                                    'text': 'Show selection details', 'onclick': function () {
+                                        alert('Start: ' + this.source.start + '\nEnd: ' + this.source.end + '\nResource id: ' + this.source.resource);
+                                    }
+                                },
+                                {
+                                    'text': 'Clean selection', 'onclick': function () {
+                                        dp.clearSelection();
+                                    }
+                                }]
+                        });
+
+                        dp.timeRangeSelectingStartEndEnabled = true;
+
+                        dp.init();
+
+
+                    </script>
+
+                    <!-- bottom -->
+                </div>
             </div>
         </div>
     </div>
-
-
 </div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        var url = window.location.href;
+        var filename = url.substring(url.lastIndexOf('/')+1);
+        if (filename === "") filename = "index.html";
+        $(".menu a[href='" + filename + "']").addClass("selected");
 
+        $(".menu-title").click(function() {
+            $(".menu-body").toggle();
+            if ($(".menu-body").is(":visible")) {
+                scrollTo({
+                    top: pageYOffset + 100,
+                    behavior: "smooth"
+                });
+            }
+        });
+    });
+
+</script>
 <div id="footer">
     Copyright ? Bristol.RainbowGroup
 </div>
+<!-- /bottom -->
 
-<script type="text/javascript">
-    var month_olypic = [31,29,31,30,31,30,31,31,30,31,30,31];//闰年每个月份的天数
-    var month_normal = [31,28,31,30,31,30,31,31,30,31,30,31];
-    var month_name =["January","Febrary","March","April","May","June","July","Auguest","September","October","November","December"];
-    //获取以上各个部分的id
-    var holder = document.getElementById("days");
-    var prev = document.getElementById("prev");
-    var next = document.getElementById("next");
-    var ctitle = document.getElementById("calendar-title");
-    var cyear = document.getElementById("calendar-year");
-    //获取当天的年月日
-    var my_date = new Date();
-    var my_year = my_date.getFullYear();//获取年份
-    var my_month = my_date.getMonth(); //获取月份，一月份的下标为0
-    var my_day = my_date.getDate();//获取当前日期
-
-    //根据年月获取当月第一天是周几
-    function dayStart(month,year){
-        var tmpDate = new Date(year, month, 1);
-        return (tmpDate.getDay());
-    }
-    //根据年份判断某月有多少天(11,2018),表示2018年12月
-    function daysMonth(month, year){
-        var tmp1 = year % 4;
-        var tmp2 = year % 100;
-        var tmp3 = year % 400;
-
-        if((tmp1 == 0 && tmp2 != 0) || (tmp3 == 0)){
-            return (month_olypic[month]);//闰年
-        }else{
-            return (month_normal[month]);//非闰年
-        }
-    }
-    //js实现str插入li+class,不要忘了用innerhtml进行插入
-    function refreshDate(){
-        var str = "";
-        //计算当月的天数和每月第一天都是周几，day_month和day_year都从上面获得
-        var totalDay = daysMonth(my_month,my_year);
-        var firstDay = dayStart(my_month, my_year);
-        //添加每个月的空白部分
-        for(var i = 0; i < firstDay; i++){
-            str += "<li>"+"</li>";
-        }
-
-        //从一号开始添加知道totalDay，并为pre，next和当天添加样式
-        var myclass;
-        for(var i = 1; i <= totalDay; i++){
-            //三种情况年份小，年分相等月份小，年月相等，天数小
-            //点击pre和next之后，my_month和my_year会发生变化，将其与现在的直接获取的再进行比较
-            //i与my_day进行比较,pre和next变化时，my_day是不变的
-            console.log(my_year+" "+my_month+" "+my_day);
-            console.log(my_date.getFullYear()+" "+my_date.getMonth()+" "+my_date.getDay());
-            if((my_year < my_date.getFullYear())||(my_year == my_date.getFullYear() && my_month < my_date.getMonth()) || (my_year == my_date.getFullYear() && my_month == my_date.getMonth() && i < my_day)){
-                myclass = " class='lightgrey'";
-            }else if(my_year == my_date.getFullYear() && my_month == my_date.getMonth() && i == my_day){
-                myclass = "class = 'green greenbox'";
-            }else{
-                myclass = "class = 'darkgrey'";
-            }
-            str += "<li "+myclass+">"+i+"</li>";
-        }
-        holder.innerHTML = str;
-        ctitle.innerHTML = month_name[my_month];
-        cyear.innerHTML = my_year;
-    }
-    //调用refreshDate()函数，日历才会出现
-    refreshDate();
-    //实现onclick向前或向后移动
-    pre.onclick = function(e){
-        e.preventDefault();
-        my_month--;
-        if(my_month < 0){
-            my_year--;
-            my_month = 11; //即12月份
-        }
-        refreshDate();
-    }
-
-    next.onclick = function(e){
-        e.preventDefault();
-        my_month++;
-        if(my_month > 11){
-            my_month = 0;
-            my_year++;
-        }
-        refreshDate();
-    }
-</script>
 </body>
 </html>
+
