@@ -1,8 +1,12 @@
 .header {
-    background-color:#6ac13c;
+    background-color: #444444;
     color:white;
     text-align:center;
     padding:5px;
+}
+
+body{
+    background-color: gainsboro;
 }
 .nav {
     line-height:30px;
@@ -29,8 +33,15 @@
     text-decoration: underline;
 }
 
-.contact .co{
+.contact .co {
     /*向左浮动*/
+    float: left;
+    width: 300px;
+    /*height: 100px;*/
+    /*background-color: yellow;*/
+}
+
+.settings .sp{
     float: left;
     width: 300px;
     /*height: 100px;*/
@@ -51,9 +62,32 @@
     margin-right: 8px;
 }
 /*给div添加左右边距*/
-.contact .co{
+.contact .co {
     margin: 0 20px;
 }
+
+.contact .nu{
+    margin:0 300px
+}
+
+.settings .sp{
+    margin: 0 20px;
+}
+.settings .pwd{
+    width: 276px;
+    height: 33px;
+    line-height: 33px;
+    /*设置背景图片*/
+    background: url("input.png") no-repeat ;
+    /*单独为IE6设置一个背景不随元素滚动 */
+    _background-attachment: fixed;
+    /*去除边框*/
+    border: none;
+    /*去除默认的内边距*/
+    padding: 0px 10px;
+    margin: 0px 0px 16px;
+}
+
 
 .contact .txt{
     width: 276px;
@@ -69,7 +103,7 @@
     padding: 0px 10px;
     margin: 0px 0px 16px;
 }
-.contact h2{
+.contact h2, .settings h2{
     color: #444;
     font: 13px/1 Georgia;
 }
@@ -113,7 +147,7 @@
     cursor:pointer;
 }
 .footer {
-    background-color:#6ac13c;
+    background-color: #444444;
     color:white;
     clear:both;
     text-align:center;
@@ -122,6 +156,7 @@
 }
 
 #box1{
+    display: none;
 }
 #box2{
     display: none;
