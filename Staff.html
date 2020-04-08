@@ -9,11 +9,13 @@
 </head>
 <body>
 
+
 <div class="header">
     <h1>Staff Homepage</h1>
 </div>
 
 <div class="test">
+
 <div class="nav">
     <!--<ul class="nav">-->
     <a href="#" id="1" class="btn2"><img src="my.png" style="width:75px;height: 75px;align-content: center"></a> <br>
@@ -29,8 +31,12 @@
 <div class="contact w clearfix" id="box1">
     <div class="co">
         <form action="#">
-            <h2>Name</h2>
-            <input class="txt" type="text" placeholder="Rachel" />
+            <h2>Surname / Family Name:</h2>
+            <input class="txt" type="text" placeholder="Zhu" />
+            <h2>Forenames:</h2>
+            <input class="txt" type="text" placeholder="Yilong" />
+            <h2>Gender:</h2>
+            <input class="txt" type="text" placeholder="Male" />
             <h2>Email address</h2>
             <input class="txt" type="email" id="email" name="email"  placeholder="rachel@bristol.ac.uk"/>
             <h2>Phone number</h2>
@@ -61,13 +67,45 @@
 
 </div>
 <div class="timetable" id="box2">第二个画面</div>
-<div class="settings" id="box3">第三个画面</div>
+<div class="settings w clearfix" id="box3">
+    <div class="sp">
+    <form action="#">
+        <br><br>
+        <h2>Old  Password:
+        <input class="pwd" type="password"  pattern="/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,8}$/" maxlength="8"
+               placeholder="Input your old password"/><br /></h2>
+        <h2>New Password:
+        <input class="pwd" type="password"  pattern="/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,8}$/"maxlength="8"
+               placeholder="Input new password"/><br /></h2>
+        <h2>New Password:
+        <input class="pwd" type="password"  pattern="/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,8}$/"maxlength="8"
+               placeholder="Input new password again" /><br /></h2>
+
+        <input type="reset" value="Reset" />
+        <input type="submit" value="Submit" />
+        <br><br>
+        <h2>Change Email</h2>
+        <input class="pwd" type="email" id="newemail" name="email"  placeholder="xxx-xx@bristol.ac.uk"/>
+        <input type="submit" value="Update" />
+
+        <br><br>
+        <h2>Change profile photo</h2>
+        <form>
+            <input type="file" name="pic" id="pic" accept="image/gif, image/jpeg" />
+        </form>
+
+</form>
+    </div>
+
+</div>
 <div class="signout" id="box4">第四个画面</div>
+
 </div>
 
 <div class="footer">
     Copyright ? Bristol.RainbowGroup
 </div>
+
 
 <script type="text/javascript">
 
@@ -115,6 +153,7 @@
             }
         }
     }
+
 
 </script>
 </body>
