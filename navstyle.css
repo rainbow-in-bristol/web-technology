@@ -1,14 +1,14 @@
 html, body{
     background:#f2f2f2;
 }
-#header {
+.header {
     background-color:#6ac13c;
     height: 85px;
     color:white;
     text-align:center;
     padding:5px;
 }
-#nav {
+.nav {
     line-height:30px;
     background-color:#eeeeee;
     height:800px;
@@ -17,7 +17,7 @@ html, body{
     padding:5px;
     text-align: center;
 }
-#nav a {
+.nav a {
     /*设置字体颜色*/
     color: darkslateblue;
     /*设置字体*/
@@ -26,19 +26,118 @@ html, body{
     text-decoration: none;
 }
 
-#nav a:hover{
+.nav a:hover{
     color: #a1a1a1;
     text-decoration: underline;
 }
-#section {
+.section {
     width:1200px;
     float:left;
     padding:0px;
 }
-#footer {
+.contact .co{
+    /*向左浮动*/
+    float: left;
+    width: 300px;
+    /*height: 100px;*/
+    /*background-color: yellow;*/
+}
+
+.contact .nu {
+    /*向左浮动*/
+    float: left;
+    width: 300px;
+    height: 100px;
+    /*background-color: red;*/
+}
+
+.nu img{
+    /*设置向左浮动*/
+    float: left;
+    margin-right: 8px;
+}
+/*给div添加左右边距*/
+.contact .co{
+    margin: 0 20px;
+}
+
+.contact .txt{
+    width: 276px;
+    height: 33px;
+    line-height: 33px;
+    /*设置背景图片*/
+    background: url("input.png") no-repeat ;
+    /*单独为IE6设置一个背景不随元素滚动 */
+    _background-attachment: fixed;
+    /*去除边框*/
+    border: none;
+    /*去除默认的内边距*/
+    padding: 0px 10px;
+    margin: 0px 0px 16px;
+}
+.contact h2{
+    color: #444;
+    font: 13px/1 Georgia;
+}
+
+.contact .tarea{
+    width: 276px;
+    height: 114px;
+    background: url("textarea.png") no-repeat;
+    /*单独为IE6设置一个背景不随元素滚动 */
+    _background-attachment: fixed;
+    border: none;
+    /*
+    去除滚动条*/
+    overflow: auto;
+    /*设置文本域不能调整大小*/
+    resize: none;
+    /*去除默认内外边距*/
+    padding: 10px;
+    margin: 0;
+}
+
+.contact .btn{
+    width: 163px;
+    height: 32px;
+    background: url("btn02.png") no-repeat;
+    border: none;
+
+    /*去除默认内外边距*/
+    padding: 0;
+    margin: 11px 0px 23px;
+
+    /*设置字体*/
+    color: white;
+    font: 13px Georgia ;
+    /*设置文字的位置*/
+    text-align: left;
+    text-indent: 1em;
+    /*
+    用来设置鼠标指针的样式
+    */
+    cursor:pointer;
+}
+.footer {
     background-color:#6ac13c;
     color:white;
     clear:both;
     text-align:center;
     padding:5px;
+
 }
+
+#box1{
+}
+#box2{
+    display: none;
+}
+#box3{
+    display: none;
+}
+
+#box4{
+    display: none;
+}
+
+
