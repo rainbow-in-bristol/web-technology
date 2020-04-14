@@ -69,16 +69,6 @@ html, body{
     margin: 0px 0px 16px;
 }
 
-.contact .txt{
-    width: 276px;
-    height: 33px;
-    line-height: 33px;
-    background: url("img/input.png") no-repeat ;
-    _background-attachment: fixed;
-    border: none;
-    padding: 0px 10px;
-    margin: 0px 0px 16px;
-}
 
 .nu img{
     float: left;
